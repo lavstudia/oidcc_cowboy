@@ -1,6 +1,8 @@
 # oidcc_cowboy
 Cowboy callback module for easy integration of OpenId Connect, using [oidcc](https://github.com/indigo-dc/oidcc).
 
+Cowboy >= 2.4 is required for this fork.
+
 ## Configuration
 | Key | Description | Allowed Values (Default) |
 | --- | --- | --- |
