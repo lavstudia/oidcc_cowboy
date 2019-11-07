@@ -10,8 +10,8 @@ start(_, _) ->
     LocalEndpoint  = <<"http://localhost:8080/oidc">>,
     Config = #{
         id            => <<"google">>,
-        client_id     => <<"214039446529-4pqbhggg2n2km45or0mmoijl5o5t5qeu.apps.googleusercontent.com">>,
-        client_secret => <<"AIzaSyCd9NTy5DuluZhAoVrgUus1HfjLetsli20">>
+        client_id     => <<"214039446529-d6hkqloinrgbdhfh8p2ghrfj1rupnttm.apps.googleusercontent.com">>,
+        client_secret => <<"71wvXT4ZnsCuJy4t8oojwzQG">>
     },
     oidcc:add_openid_provider(ConfigEndpoint, LocalEndpoint, Config),
     basic_client:init(),

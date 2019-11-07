@@ -31,7 +31,7 @@ handle(Req, #state{session = Session } = State) ->
     },
     Req2 = cowboy_req:set_resp_cookie(?COOKIE, <<"deleted">>, Req, Opts),
     Req3 = cowboy_req:set_resp_body(get_body(Session), Req2),
-    {ok, Req4} = cowboy_req:reply(200, Req3),
+    Req4 = cowboy_req:reply(200, Req3),
 
     {ok, Req4, State}.
 

@@ -21,7 +21,12 @@ elvis:
 compile:
 	$(REBAR) compile
 
+basic_client_clean:
+	make -C example/basic_client clean
+
+basic_client_run:
+	make -C example/basic_client run
 
 basic_client:
-	make -C example/basic_client clean
-	make -C example/basic_client run
+	basic_client_clean
+	basic_client_run
