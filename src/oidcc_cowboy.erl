@@ -5,21 +5,20 @@
 -export([terminate/3]).
 
 -record(state, {
-          request_type = bad,
-          code = undefined,
-          error = undefined,
-          state = undefined,
-          provider = undefined,
-
-          session = undefined,
-          peer_ip = undefined,
-          url_extension = #{},
-          user_agent = undefined,
-          referer = undefined,
-          client_mod = undefined,
-          use_cookie = undefined,
-          cookie_data = undefined
-         }).
+    request_type  = bad,
+    code          = undefined,
+    error         = undefined,
+    state         = undefined,
+    provider      = undefined,
+    session       = undefined,
+    peer_ip       = undefined,
+    url_extension = #{},
+    user_agent    = undefined,
+    referer       = undefined,
+    client_mod    = undefined,
+    use_cookie    = undefined,
+    cookie_data   = undefined
+}).
 
 -define(COOKIE, <<"oidcc_session">>).
 
@@ -27,13 +26,15 @@ init(Req, _Opts) ->
     try extract_args(Req) of
         {ok, Req2, State} ->
 			Req3 = handle(Req2, State),
+            
 			{ok, Req3, State}
     catch
         _:_ ->
             Desc = <<"internal error occured">>,
+
             {ok, Req, #state{request_type=internal_error,
-                             error = Desc
-                            }}
+                error = Desc
+            }}
     end.
 
 handle(Req, #state{request_type = redirect} = State) ->

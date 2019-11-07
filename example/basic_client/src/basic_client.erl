@@ -2,11 +2,11 @@
 -behaviour(oidcc_client).
 
 -export([init/0]).
--export([login_succeeded/1]).
--export([login_succeeded/2]).
--export([login_failed/2]).
--export([login_failed/3]).
--export([start_debug/1, stop_debug/0]).
+-export([login_succeeded/1, login_succeeded/2]).
+-export([login_failed/2, login_failed/3]).
+-export([start_debug/1]).
+-export([stop_debug/0]).
+
 
 init() ->
     oidcc_client:register(?MODULE).
